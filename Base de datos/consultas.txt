@@ -1,0 +1,36 @@
+1. listar los capitanes con sus respectivas naves
+2. A qué Flotas pertenece cada nave?
+3. Lista la cantidad de naves que tiene cada Imperio
+4. Lista las flotas de cada Imperio
+5. Lista la Temperatura_promedio de cada Imperio
+6. LIsta hacia que destino vuelta cada flota
+7. Lista la cantidad de misiones que tiene cada flota.
+8. Nombra la nave mas veloz
+
+
+
+1. SELECT Capitan.Nombre FROM Capitan INNER JOIN Nave;
+1. SELECT Capitan.Nombre, Nave.Id_nave FROM Capitan INNER JOIN Nave ON Capitan.id_capitan = nave.id_capitan;
+
+2. SELECT id.nave, flota.nombre FROM nave INNER JOIN flota ON nave.id_nave = flota.id_nave;
+
+3. SELECT imperio.nombre, COUNT(nave.id_nave) AS numero_de_naves FROM imperio INNER JOIN nave ON imperio.codigo_galactico_del_imperio = nave.codigo_galactico_del_imperio GROUP BY imperio.nombre;
+
+4. SELECT imperio.nombre, flota.nombre, COUNT(nave.id_nave) AS numero_de_naves FROM imperio INNER JOIN flota ON imperio.codigo_galactico_del_imperio = flota codigo_galactico_del_imperio INNER JOIN nave ON flota.id_flota = nave.id_flota GROUP BY imperio.nombre, flota.nombre;
+
+5. SELECT imperio.nombre, imperio.temperatura_promedio FROM imperio;
+
+6. SELECT imperio.nombre, flota.nombre FROM imperio JOIN flota ON imperio.codigo_galactico_del_imperio = flota.codigo_galactico_del_imperio GROUP BY imperio.nombre, flota.nombre;
+
+
+7. SELECT flota.nombre, COUNT(mision.id_mision) AS numero_de_misiones FROM flota INNER JOIN mision ON flota.id_flota = mision.id_flota GROUP BY flota.nombre;
+
+8.SELECT nave.nombre, nave.velocidad_maxima FROM nave ORDER BY nave.velocidad_maxima DESC LIMIT 1;
+ 
+
+
+
+
+
+BUscar curiosidades de DATE Y VARCHAR
+

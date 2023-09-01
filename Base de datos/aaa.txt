@@ -1,0 +1,71 @@
+DDL
+
+CREATE TABLE Planeta
+(
+  Nombre_Cientifico INT NOT NULL,
+  Poblacion_total INT NOT NULL,
+  Coordenadas_galacticas INT NOT NULL,
+  Nombre_Vulgar INT NOT NULL,
+  PRIMARY KEY (Nombre_Cientifico)
+);
+
+CREATE TABLE Raza
+(
+  Nombre_Cientifico_de_la_raza INT NOT NULL,
+  Habilidades_principales_ INT NOT NULL,
+  PRIMARY KEY (Nombre_Cientifico_de_la_raza)
+);
+
+CREATE TABLE Nave
+(
+  Id_nave INT NOT NULL,
+  Velocidad_maxima INT NOT NULL,
+  Energia_acumulada INT NOT NULL,
+  PRIMARY KEY (Id_nave)
+);
+
+CREATE TABLE Maniobras
+(
+  Consumo_de_energia INT NOT NULL,
+  Nombre_de_maniobra INT NOT NULL,
+  Id_Maniobra INT NOT NULL,
+  PRIMARY KEY (Nombre_de_maniobra),
+  FOREIGN KEY (Id_nave) REFERENCES Nave(Id_nave)
+);
+
+CREATE TABLE Capitan
+(
+  Nombre INT NOT NULL,
+  Id_capitan INT NOT NULL,
+  PRIMARY KEY (Id_capitan),
+  FOREIGN KEY (Id_nave) REFERENCES Nave(Id_nave)
+);
+
+CREATE TABLE Vivir
+(
+  Nombre_Cientifico_de_la_raza INT NOT NULL,
+  Nombre_Cientifico INT NOT NULL,
+  PRIMARY KEY (Nombre_Cientifico_de_la_raza, Nombre_Cientifico),
+  FOREIGN KEY (Nombre_Cientifico_de_la_raza) REFERENCES Raza(Nombre_Cientifico_de_la_raza),
+);
+
+CREATE TABLE Flotas
+(
+  Codigo_galactico_de_flota INT NOT NULL,
+  Destino INT NOT NULL,
+  Misiones INT NOT NULL,
+  Id_flotas INT NOT NULL,
+  PRIMARY KEY (Codigo_galactico_de_flota),
+  FOREIGN KEY (Id_nave) REFERENCES Nave(Id_nave)
+);
+
+CREATE TABLE Imperio
+(
+  Codigo_galactico_del_imperio INT NOT NULL,
+  Nombre VARCAHR(40) NOT NULL,
+  Temperatura_promedio INT NOT NULL,
+  Nombre_Cientifico INT NOT NULL,
+  PRIMARY KEY (Codigo_galactico_del_imperio),
+  FOREIGN KEY (Nombre_Cientifico) REFERENCES Planeta(Nombre_Cientifico),
+  FOREIGN KEY (Codigo_galactico_de_flota) REFERENCES Flotas(Codigo_galactico_de_flota)
+);

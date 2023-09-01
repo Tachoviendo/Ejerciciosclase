@@ -1,0 +1,6 @@
+ALTER TABLE nombre_de_la_tabla RENAME TO nombre_de_la_tabla_temp;
+CREATE TABLE nombre_de_la_tabla (columna1 nuevo_tipo_de_dato, columna2 tipo_de_dato_existente, ...);
+INSERT INTO nombre_de_la_tabla SELECT * FROM nombre_de_la_tabla_temp;
+DROP TABLE nombre_de_la_tabla_temp;
+
+ALTER TABLE Flotas MODIFY Misiones VARCHAR(100);

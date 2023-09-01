@@ -1,0 +1,13 @@
+Persona
+    atributos
+        1. Id
+        2. Nombre
+        3. Apellido
+        4. Número de teléfono
+        5. Fecha de nacimiento
+        6. Estatura
+    Métodos
+        1. Imprimir edad
+        2. Imprimir informción de contacto.
+        3. Imprimir nombre completo
+        

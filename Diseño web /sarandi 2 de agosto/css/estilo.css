@@ -1,0 +1,34 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: darkorange;
+}
+
+article {
+    height: 700px;
+    width: 30%;
+    margin: 20px;
+    border-radius: 2px;
+
+}
+
+article img {
+    width: 80%;
+}
+
+#main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Añadimos estilos para los articles secundarios */
+article:not(#main) {
+    flex-basis: 30%; /* Establecemos el ancho relativo */
+}
+#publicaciones{
+    margin-top: 30%;
+}

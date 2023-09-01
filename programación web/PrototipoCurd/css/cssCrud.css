@@ -1,0 +1,85 @@
+body{
+    background-color: #344E41;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+}
+
+div{ 
+    height: 380px;
+    width: 600px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #DAD7CD;
+    border-radius: 5px;
+    margin:50px;
+}
+div form{
+    margin:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+div form h1{
+    border-style: solid;
+    border-color: #ffff;
+    border-width: 5px;
+    margin:10px;
+    padding:10px;
+    border-radius: 3px;
+    background-color: #588157;
+    color: #ffff;
+    align-self: center;
+    box-shadow: #000000a0 1px 1px 7px 1px;
+
+}
+div form .sumbit{
+    margin-left:10px;
+    
+    width: 50%;
+    align-self: center;
+}
+
+div form input{
+    box-shadow: #000000a0 1px 1px 7px 1px;
+    border:none;
+    border-radius: 3px;
+    width: 90%;
+    margin: 10px;
+    align-self: center;
+    transition:  0.08s ease-in-out;
+    
+}
+div form input:focus{
+    border: 3px #344E41 solid;
+    outline: none;
+} 
+
+/*tablas*/
+table{
+    table-layout:fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #344E41;
+}
+table a{
+    text-decoration: none;
+    color: #000000;
+    transition: 0.1s ease-in-out;
+}
+table a:hover{
+    color: #344E41;
+    font-size: 14px;
+    
+}
+td,th{
+    width: 20%;
+    padding:20px;
+    text-align: center;
+}
+
+
